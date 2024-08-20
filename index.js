@@ -3,19 +3,21 @@ start();
 function start() {
     let i = 0;
     const field = document.querySelector('#field');
-    const message = document.querySelector('#message')
-    message.textContent = '';
+
+    const messageContainer = document.querySelector('#message-container');
+    messageContainer.addEventListener('click', start);
+    messageContainer.classList.toggle('show');
 
     field.addEventListener('click', function step(e) {
-        if(e.target.className === 'cell' && !e.target.textContent) {
+        if (e.target.className === 'cell' && !e.target.textContent) {
             e.target.textContent = ['X', 'O'][i % 2];
             
             if(isVictory(field.children)) {
-                message.textContent = `Player ${e.target.textContent} is win`;
+                showEndGameMessage(messageContainer, `Player ${e.target.textContent} is win`);
                 
                 field.removeEventListener('click', step);
             } else if (i == 8) {
-                message.textContent = `Draw`;
+                showEndGameMessage(`Draw`);
 
                 field.removeEventListener('click', step);
             }
@@ -25,6 +27,11 @@ function start() {
     });
 
     [].map.call(field.children, (item) => item.textContent = '');
+}
+
+function showEndGameMessage(messageContainer, message) {
+    messageContainer.firstChild.textContent = message;
+    messageContainer.classList.toggle('show');
 }
 
 function isVictory(cells) {
