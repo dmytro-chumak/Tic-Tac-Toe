@@ -1,6 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    --field-color:#026873;
+    --mark-color:#013440;
+    --message-color:#013440;
+    --background-color:#038C8C;
 }
 
 body {
@@ -8,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: var(--background-color);
 }
 
 .container {
@@ -17,13 +21,13 @@ body {
     grid-template-rows: repeat(3, 1fr);
     width: 90vw; 
     max-width: 500px; 
+    gap: 3px;
 }
 
 .cell {
     --font-size: calc(30vw / 3);
 
-    background-color: black;
-    border: 1px solid white;
+    background-color: var(--field-color);
 
     display: flex;
     justify-content: center;
@@ -31,8 +35,36 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: var(--font-size);
-    color: white;
+    color: var(--mark-color);
     line-height: var(--font-size);
 
+    border-radius: 10px;
+
     aspect-ratio: 1 / 1; 
+}
+
+#message-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--background-color);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#message-container.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#message-container > span {
+    color: var(--message-color);
+    font-size: 64px;
 }
