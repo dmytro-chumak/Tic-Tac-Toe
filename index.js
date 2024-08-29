@@ -13,7 +13,7 @@ function start() {
             e.target.textContent = ['X', 'O'][i % 2];
             
             if(isVictory(field.children)) {
-                showEndGameMessage(messageContainer, `Player ${e.target.textContent} is win`);
+                showEndGameMessage(messageContainer, `Player ${e.target.textContent} wins`);
                 
                 field.removeEventListener('click', step);
             } else if (i == 8) {
