@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-**[Перейти на сайт](https://starlex02.github.io/Tic-Tac-Toe/)**
+**[Перейти на сайт](dmytro-chumak.github.io/Tic-Tac-Toe/)**
 
 ## Description
 
