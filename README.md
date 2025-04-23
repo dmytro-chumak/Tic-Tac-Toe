@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-**[Перейти на сайт](https://dmytro-chumak.github.io/Tic-Tac-Toe/)**
+**[Go to the website](https://dmytro-chumak.github.io/Tic-Tac-Toe/)**
 
 ## Description
 
